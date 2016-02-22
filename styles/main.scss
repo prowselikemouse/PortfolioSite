@@ -1,0 +1,177 @@
+@import "setup";
+
+$lightSlateBlue: #a4bfc9;
+$mediumgrey: #828282;
+$driedblood: #7e030d;
+$futura: "futura-pt", sans-serif;
+$playfair: "Playfair Display", serif;
+
+@mixin fontSize($sizeValue){
+    font-size: $sizeValue * 1px;
+    font-size: ($sizeValue/10) * 1rem;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	@include fontSize(16)
+}
+
+h2 {
+	// margin: 2.4rem;
+	font-family: $playfair;
+	font-style: bold italic;
+	text-transform: lowercase;
+	display: block;
+}
+
+ul {
+	list-style: none;
+	display: flex;
+}
+
+img {
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+section {
+	margin-left: 34rem;
+}
+
+.wrapper {
+	max-width: 960px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.content {
+	background-image: url(../images/profile_pic.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: calc(100vh - 14rem);
+	margin-top: 8rem;
+	margin-bottom: 6rem;
+	.logo {
+		width: 12rem;
+		position: absolute;
+		top: -4rem;
+		left: -2rem;
+		}
+	}
+
+ul.menu {
+	flex-direction: row;
+	justify-content: flex-end;
+	margin: 0;
+	position: relative;
+	bottom: 2rem;
+	li {
+		font-family: $futura;
+		font-size: 1.6rem;
+		text-transform: lowercase;
+		padding: 0 2rem;
+		&:nth-child(n+2){
+			border-left: 1px solid #ccc;
+		}
+	}
+}
+
+.introHeadline,
+.aboutHeadline {
+	line-height: 0rem;
+	margin-bottom: 9rem;
+	font-size: 5rem;
+	font-family: $playfair;
+	font-style: italic;
+	text-transform: lowercase;
+}
+
+.introHeadlineTop::after {
+	width: 35rem;
+	content: '';
+	border-bottom: 2.8px solid black;
+	display: block;
+	padding-top: 3.4rem;
+}
+
+.introHeadlineBottom::after {
+	width: 47rem;
+	margin-left: -0.2rem;
+	content: '';
+	border-bottom: 2.8px solid black;
+	display: block;
+	padding-top: 3.4rem;
+}
+
+h2.introHeadlineBottom,
+h2.aboutHeadlineBottom {
+		margin-left: 5rem;
+	}
+
+.introText {
+	font-family: $futura;
+	margin: 9rem 2rem 0 9rem;
+	font-size: 1.8rem;
+	letter-spacing: 0.03rem;
+	.introTextNameRole {
+		margin-bottom: 3rem;
+		.introTextName {
+			font-family: $playfair;
+			font-style: italic;
+			font-size: 3rem;
+		}
+	}
+	.introDescription {
+		color: $mediumgrey;
+		a {
+			color: $driedblood;
+		}
+	}
+}
+
+.introText p {
+		margin: 0;
+}
+
+.intro,
+.about,
+.skills,
+.tools,
+.contact {
+	position: absolute;
+	top: 5rem;
+	padding: 0;
+}
+
+.contact ul.contactInfo {
+	flex-direction: column;
+}
+
+.bluebar {
+	background-color: $lightSlateBlue;
+	height: 6rem;
+	width: 62rem;
+	position: absolute;
+	bottom: 4rem;
+	right: 0;
+	padding: 1rem;
+	ul {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		margin: 0;
+		li {
+			width: 4rem;
+			margin-right: 1rem;
+		}
+	}
+}
+
+
+
